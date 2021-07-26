@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import createSagaMiddleware from "redux-saga";
 
 import sampleReducer from './slices/sample'
+import dynamicFormReducer from './slices/dynamic-form'
 import saga from 'sagas'
 
 let sagaMiddleware = createSagaMiddleware()
@@ -10,6 +11,7 @@ let sagaMiddleware = createSagaMiddleware()
 export const store = configureStore({
   reducer: combineReducers({
     sampleData: sampleReducer,
+    dynamicForm: dynamicFormReducer
   }),
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware({ thunk: false }), sagaMiddleware]
 })

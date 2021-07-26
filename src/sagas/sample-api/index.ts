@@ -12,9 +12,7 @@ export function* fetchDataSaga(): any {
         url: 'https://reqres.in/api/products/3',
         method: 'GET',
       }));
-    console.log(result, "test result");
     yield put(apiResponseUpdate(result.data.data))
-    return result.data.data
   } catch (error) {
     return
   }
