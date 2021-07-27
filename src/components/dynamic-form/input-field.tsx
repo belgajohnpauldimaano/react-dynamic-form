@@ -9,6 +9,7 @@ const FIELD_OPTIONS = {
   SELECT: "select",
   NUMBER: "number",
   MULTILINE: "multiline",
+  EMAIL: "email",
 };
 
 type InputFieldProps = {
@@ -86,6 +87,7 @@ const InputField = ({
         value={fieldValue}
         disabled={disabled}
         onChange={onChange}
+        {...(fieldType === FIELD_OPTIONS.EMAIL && { type: "email" })}
       />
     );
   };
