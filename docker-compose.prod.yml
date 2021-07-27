@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  dynamic-form-app-prod:
+    container_name: dynamic-form-app-prod
+    build:
+      context: .
+      dockerfile: ./docker-files/Dockerfile.prod
+    ports:
+      - "3000:80"
